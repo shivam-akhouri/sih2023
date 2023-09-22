@@ -17,17 +17,17 @@ func NewRouter() *gin.Engine {
 	// TODO: Export grouping login here
 	hospitalRoutes := router.Group("/hospital")
 	{
-		hospitalRoutes.GET("/doctors", controller.GetHospitalDoctors)
-		hospitalRoutes.GET("/nearby", controller.GetNearbyHospitals)
-		hospitalRoutes.GET("/createHospital", controller.CreateHospital)
+		hospitalRoutes.POST("/doctors", controller.GetHospitalDoctors)
+		hospitalRoutes.POST("/nearby", controller.GetNearbyHospitals)
+		hospitalRoutes.POST("/createHospital", controller.CreateHospital)
 	}
 	patientRoutes := router.Group("/patient")
 	{
-		patientRoutes.GET("/createAccount", controller.CreatePatients)
-		patientRoutes.GET("/login", controller.Login)
-		patientRoutes.GET("/deleteAccount", controller.DeletePatient)
-		patientRoutes.GET("/aiAppointement", controller.AiAppointement)
-		patientRoutes.GET("/bookAppointement", controller.BookAppointement)
+		patientRoutes.POST("/createAccount", controller.CreatePatients)
+		patientRoutes.POST("/login", controller.Login)
+		patientRoutes.POST("/deleteAccount", controller.DeletePatient)
+		patientRoutes.POST("/aiAppointement", controller.AiAppointement)
+		patientRoutes.POST("/bookAppointement", controller.BookAppointement)
 	}
 	doctorRoutes := router.Group("/doctor")
 	{
