@@ -32,7 +32,7 @@ func NewRouter() *gin.Engine {
 	doctorRoutes := router.Group("/doctor")
 	{
 		doctorRoutes.GET("/createAccount", controller.CreateDoctor)
-		doctorRoutes.GET("/markAttendance", controller.MarkAttendance)
+		doctorRoutes.POST("/markAttendance", controller.MarkAttendance)
 	}
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, map[string]any{
