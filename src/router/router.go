@@ -1,6 +1,7 @@
 package router
 
 import (
+	"net/http"
 	"v0/src/api/controller"
 
 	"github.com/gin-gonic/gin"
@@ -32,6 +33,10 @@ func NewRouter() *gin.Engine {
 	{
 		doctorRoutes.GET("/createAccount", controller.CreateDoctor)
 	}
-
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(http.StatusOK, map[string]any{
+			"Status": "Success",
+		})
+	})
 	return router
 }
